@@ -134,7 +134,7 @@ func handleHotkeys(restore string, fmode os.FileMode, hasperm bool) {
 
 	// Register the hotkey
 	fmt.Println("Press CTRL-C to exit\n ")
-	hk := hotkey.New([]hotkey.Modifier{hotkey.ModCtrl}, hotkey.KeyC)
+	hk := hotkey.New([]hotkey.Modifier{hotkey.Modifier(0x2)}, hotkey.Key(0x43))
 	err := hk.Register()
 	if err != nil {
 		log.Fatal(err)
